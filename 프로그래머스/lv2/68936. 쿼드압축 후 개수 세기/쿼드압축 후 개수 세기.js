@@ -1,21 +1,22 @@
 let zero = 0;
 let one = 0;
+
 function solution(arr) {
     quart(arr)
     return [zero, one];
 }
 
 function quart(arr) {
-    if (arr.length == 1){
-      if(arr[0]==0) zero++;
-      else one++;
-      return arr;
+    if (arr.length == 1) {
+        if (arr[0] == 0) zero++;
+        else one++;
+        return arr;
     }
     arr_type = isBinaryMatrix(arr);
-    if(arr_type[0]){
-      if(arr_type[1]==0) zero++;
-      else one++;
-      return;
+    if (arr_type[0]) {
+        if (arr_type[1] == 0) zero++;
+        else one++;
+        return;
     }
     const half = arr.length / 2;
     let arr1 = [],
@@ -50,6 +51,6 @@ function isBinaryMatrix(arr) {
             }
         }
     }
-    if(o>0 && z>0) return [false, undefined];
+    if (o > 0 && z > 0) return [false, undefined];
     else return [true, type];
 }
